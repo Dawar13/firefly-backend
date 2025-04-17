@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Firefly Diamonds Price Comparison",
+  "version": "1.0",
+  "description": "Compare jewelry prices across Firefly Diamonds and competitors",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "https://firefly-diamonds-api.onrender.com/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

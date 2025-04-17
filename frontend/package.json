@@ -1,0 +1,29 @@
+{
+  "name": "firefly-extension",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "proxy": "http://localhost:5000",
+  "scripts": {
+    "start": "web-ext run",
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development --watch",
+    "lint": "web-ext lint",
+    "package": "web-ext build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^6.10.0",
+    "style-loader": "^3.3.4",
+    "web-ext": "^7.11.0",
+    "webpack": "^5.99.5",
+    "webpack-cli": "^6.0.1"
+  }
+}

@@ -1,10 +1,18 @@
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://firefly-diamonds-api.onrender.com/api/v1' 
-  : '/api/v1';
+/**
+ * API service for Firefly Diamonds application
+ * Handles all API requests to the backend server
+ */
 
+// Use environment variable for API URL
+const API_BASE_URL = `${process.env.REACT_APP_API_URL}/api/v1`;
 
-
-// Function to fetch products based on price range
+/**
+ * Fetches products based on price range and category
+ * @param {number} minPrice - Minimum price filter
+ * @param {number} maxPrice - Maximum price filter
+ * @param {string} category - Product category filter
+ * @returns {Promise<Array>} - Promise resolving to array of products
+ */
 export const fetchProducts = async (minPrice, maxPrice, category) => {
   try {
     const queryParams = new URLSearchParams();
@@ -25,7 +33,11 @@ export const fetchProducts = async (minPrice, maxPrice, category) => {
   }
 };
 
-// Function to get product details
+/**
+ * Gets detailed information for a specific product
+ * @param {string} productId - ID of the product to fetch
+ * @returns {Promise<Object>} - Promise resolving to product details
+ */
 export const getProductDetails = async (productId) => {
   try {
     const response = await fetch(`${API_BASE_URL}/products/${productId}`);
@@ -41,7 +53,11 @@ export const getProductDetails = async (productId) => {
   }
 };
 
-// Function to refresh product prices
+/**
+ * Refreshes price information for a specific product
+ * @param {string} productId - ID of the product to refresh
+ * @returns {Promise<Object>} - Promise resolving to updated product data
+ */
 export const refreshProductPrices = async (productId) => {
   try {
     const response = await fetch(`${API_BASE_URL}/products/${productId}/refresh`, {
@@ -58,4 +74,3 @@ export const refreshProductPrices = async (productId) => {
     throw error;
   }
 };
-

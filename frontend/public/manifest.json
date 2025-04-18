@@ -6,18 +6,21 @@
   "action": {
     "default_popup": "index.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "logo192.png",
+      "48": "logo192.png",
+      "128": "logo592.png"
     }
   },
   "permissions": ["activeTab"],
-  "host_permissions": [
-    "https://firefly-diamonds-api.onrender.com/*"
-  ],
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "logo192.png",
+    "48": "logo192.png",
+    "128": "logo592.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
   }
 }
+
+
+

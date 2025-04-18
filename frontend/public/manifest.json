@@ -11,17 +11,20 @@
       "128": "logo592.png"
     }
   },
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage"],
   "icons": {
     "16": "logo192.png",
     "48": "logo192.png",
     "128": "logo592.png"
   },
   "content_security_policy": {
-  "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' data: https://*;"
+    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' data: https://* http://*;"
+  },
+  "host_permissions": ["<all_urls>"],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*", "logo192.png", "logo592.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
-
-}
-
-
-

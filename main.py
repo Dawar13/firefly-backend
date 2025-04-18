@@ -1,3 +1,18 @@
+import sys
+import os
+from pathlib import Path
+
+# Get the absolute path to the project root
+BASE_DIR = Path(__file__).resolve().parent
+
+# Add project root to Python path
+sys.path.append(str(BASE_DIR))
+
+# Print paths for debugging
+print("Current directory:", os.getcwd())
+print("Base directory:", BASE_DIR)
+print("Python path:", sys.path)
+
 from fastapi import FastAPI # type: ignore
 from fastapi.middleware.cors import CORSMiddleware # type: ignore
 from api.endpoints import prices
